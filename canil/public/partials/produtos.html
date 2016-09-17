@@ -1,0 +1,81 @@
+<section class="container">
+
+    <meu-painel titulo="Canil">
+
+    </meu-painel>
+
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <h1 class="fa fa-user"></h1>
+                        <a ng-click="sort('nome')">Nome</a>
+                    </td>
+                    <td>
+                        <h1 class="fa fa-money"></h1>
+                        <a ng-click="sort('preco')">Preço</a></td>
+                    <td>
+                        <h1 class="fa fa-cloud"></h1>
+                        <a ng-click="sort('raca')">Raça</a></td>
+                        <td>
+
+                        </td>
+                </tr>
+            </thead>
+
+            <tbody class="table-striped">
+                <tr ng-repeat="produto in produtos | 
+                     orderBy:sortValue:order
+                     | filter: filtro">
+                    <td>{{produto.nome }}</td>
+                    <td>{{produto.preco}}</td>
+                    <td>{{produto.raca}}</td>
+                    <td>                                                
+                        <a class="btn btn-success" ng-click="addCarrinho(produto)">Comprar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <meu-painel titulo="Compras">
+
+    </meu-painel>
+    
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>
+                        <h1 class="fa fa-user"></h1>
+                        <a ng-click="sort('nome')">Nome</a>
+                    </td>
+                    <td>
+                        <h1 class="fa fa-money"></h1>
+                        <a ng-click="sort('preco')">Preço</a></td>
+                    <td>
+                        <h1 class="fa fa-cloud"></h1>
+                        <a ng-click="sort('ativo')">Quantidade</a></td>
+                        <td>
+
+                        </td>
+                </tr>
+            </thead>
+
+            <tbody class="table-striped">
+                <tr ng-repeat="carrinho in carrinho">
+                    <td>{{carrinho.nome }}</td>
+                    <td>{{carrinho.preco}}</td>
+                    <td>{{carrinho.qtd}}</td>
+                    <td>                                                
+                        <a class="btn btn-danger" ng-click="remCarrinho(carrinho._id)">Remover</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</section>
