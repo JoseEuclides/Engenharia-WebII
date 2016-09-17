@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculadora</title>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width-divice-width, initial-scale=1">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+
+</head>
+
+<body ng-app="calc">
+    <div class="row text-center" ng-controller="calculadoraController as c">
+
+        <form id="calculadora">
+            <input ng-model="c.numero1" type="number" class="btn alert-success">
+            <input ng-model="c.numero2" type="number" class="btn alert-success">
+            <p></p>
+
+        </form>
+        <div id="botoes">
+            <button type="button" class="btn btn-success" ng-click="c.soma()">+</button>
+            <button type="button" class="btn btn-success" ng-click="c.subtracao()">-</button>
+            <button type="button" class="btn btn-success" ng-click="c.divisao()">/</button>
+            <button type="button" class="btn btn-success" ng-click="c.multiplicacao()">*</button>
+            
+
+        </div>
+        <p></p>
+        {{c.resultado}}
+
+    </div>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controller/calculadoraController.js"></script>
+</body>
+
+</html>
